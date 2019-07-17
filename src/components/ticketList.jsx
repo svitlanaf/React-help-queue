@@ -13,6 +13,7 @@ function TicketList(props) {
           location={ticket.location}
           issue={ticket.issue}
           formattedWaitTime={ticket.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
           key={ticket.id}
         />
       ))}
@@ -20,11 +21,9 @@ function TicketList(props) {
   );
 }
 
-Ticket.propTypes = {
-  names: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  issue: PropTypes.string,
-  formattedWaitTime: PropTypes.string.isRequired
+TicketList.propTypes = {
+  ticketList: PropTypes.array,
+  currentRouterPath: PropTypes.string
 };
 
 export default TicketList;
